@@ -3,7 +3,7 @@ name: Compilar APK EcoMapa DF
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch: # Permite acionar o botão de compilação manualmente no GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,11 +26,16 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Baixar dependências
-        run: flutter pub get
+      - name: Garantir arquivos nativos do Android
+        run: |
+          flutter create --platforms=android --org com.ecomapa .
+          flutter pub add intl:any
+          flutter pub get
+          chmod +x android/gradlew || true
+          yes | flutter doctor --android-licenses || true
 
       - name: Compilar APK Release (Instalador Android)
-        run: flutter build apk --release
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Disponibilizar APK para Download
         uses: actions/upload-artifact@v4
