@@ -1,0 +1,18 @@
+==================================================
+ECOMAPA DF - PROJETO FLUTTER COMPLETO
+==================================================
+
+Este arquivo compactado contém todos os códigos do EcoMapa DF prontos para execução no Flutter e geração do APK Android.
+
+COMO EXECUTAR NO WINDOWS / ANDROID:
+1. Extraia o conteúdo desta pasta.
+2. Abra o terminal (Prompt de Comando ou PowerShell) nesta pasta extraída.
+3. Execute o comando para instalar as dependências:
+   flutter pub get
+4. Conecte o seu celular Android via cabo USB (com Depuração USB ativada) ou abra o Emulador Android.
+5. Execute o aplicativo:
+   flutter run
+6. Para gerar o arquivo APK de instalação:
+   flutter build apk --release
+   O APK gerado ficará em:
+   build/app/outputs/flutter-apk/app-release.apk

@@ -1,0 +1,40 @@
+name: ecomapa_df
+description: "EcoMapa DF - Plataforma de ciência cidadã para monitoramento de resíduos e ecopontos no Distrito Federal."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Ícones e Material 3
+  cupertino_icons: ^1.0.8
+
+  # Mapa interativo livre e leve (OpenStreetMap) - funciona direto sem cartão/chaves de API
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+  # Geolocalização GPS real e permissões
+  geolocator: ^13.0.2
+
+  # Câmera e seleção de imagens da galeria
+  image_picker: ^1.1.2
+
+  # Armazenamento local persistente em JSON (pronto para migrar para Firebase/Firestore)
+  shared_preferences: ^2.3.5
+
+  # Formatação de datas em português
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
